@@ -1,0 +1,24 @@
+{
+  "name": "geojson",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.0.5",
+    "geojson-extent": "^0.3.2",
+    "js-file-download": "^0.4.1",
+    "mapbox-gl": "^0.44.1",
+    "mapbox-gl-draw-rectangle-mode": "^1.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-mapbox-gl": "^3.8.0",
+    "react-mapbox-gl-draw": "^1.0.4",
+    "react-scripts": "1.1.1",
+    "turf-random": "^3.0.12"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

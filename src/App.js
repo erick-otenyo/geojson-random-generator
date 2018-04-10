@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       geojson: null,
       bbox: null,
-      num: 20,
+      num: 100,
       drawing: false
     };
   }

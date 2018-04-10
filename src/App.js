@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       geojson: null,
       bbox: null,
-      num: 100,
+      num: 20,
       drawing: false
     };
   }
@@ -52,15 +52,81 @@ class App extends Component {
   handleonStyleLoad = () => {
     this.setState({ drawButton: true });
   };
+  onClear = () => {
+    this.setState({ geojson: null });
+  };
+  onNumChange = e => {
+    this.setState({ num: e.target.value });
+  };
   render() {
     return (
       <div>
         {this.state.drawButton && (
-          <div style={{ position: "fixed", zIndex: "9999", padding: "20px" }}>
-            <button onClick={this.handleDrawButtonClick}>
+          <div style={{ position: "fixed", zIndex: "9999", margin: 5 }}>
+            <p
+              style={{
+                margin: 0,
+                marginTop: 5,
+                fontSize: 14,
+                fontWeight: "bold",
+                padding: 0,
+                paddingLeft: 5
+              }}
+            >
+              Number of Points
+            </p>
+            <input
+              type="number"
+              value={this.state.num}
+              onChange={this.onNumChange}
+              placeholder="Num of points"
+            />
+            <button
+              style={{
+                backgroundColor: "#4CAF50",
+                border: "none",
+                borderRadius: 4,
+                color: "white",
+                padding: 10,
+                textAlign: "center",
+                display: "inline-block",
+                cursor: "pointer",
+                fontSize: 14
+              }}
+              onClick={this.handleDrawButtonClick}
+            >
               {this.state.drawing ? "Cancel" : "Draw Extent"}
             </button>
-            <p>
+            <div style={{ padding: 10 }}>
+              {this.state.geojson && (
+                <button
+                  style={{
+                    backgroundColor: "#C9302C",
+                    border: "none",
+                    borderRadius: 4,
+                    color: "white",
+                    padding: 10,
+                    textAlign: "center",
+                    display: "inline-block",
+                    fontSize: 14,
+                    cursor: "pointer"
+                  }}
+                  onClick={this.onClear}
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <p
+              style={{
+                margin: 0,
+                marginTop: 5,
+                fontSize: 14,
+                fontWeight: "bold",
+                padding: 0,
+                paddingLeft: 5
+              }}
+            >
               {this.state.drawing &&
                 "Click on map and Move mouse to draw a rectangular extent"}
             </p>
@@ -76,7 +142,22 @@ class App extends Component {
           }}
         >
           {this.state.geojson && (
-            <button onClick={this.handleDownloadClick}>Download</button>
+            <button
+              style={{
+                backgroundColor: "#4CAF50",
+                border: "none",
+                borderRadius: 4,
+                color: "white",
+                padding: 10,
+                textAlign: "center",
+                display: "inline-block",
+                fontSize: 14,
+                cursor: "pointer"
+              }}
+              onClick={this.handleDownloadClick}
+            >
+              Download
+            </button>
           )}
         </div>
         <Map

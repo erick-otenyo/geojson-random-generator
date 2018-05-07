@@ -9,8 +9,7 @@ import fileDownload from "js-file-download";
 
 const Map = ReactMapboxGl({
   accessToken:
-    "pk.eyJ1IjoiY3dob25nbnljIiwiYSI6ImNpczF1MXdrdjA4MXcycXA4ZGtyN2x5YXIifQ.3HGyME8tBs" +
-    "6BnljzUVIt4Q"
+    "pk.eyJ1IjoiZXJpY2tvdGVueW8iLCJhIjoiY2owYXlsb2kxMDAwcjJxcDk3a2Q0MmdpZSJ9.GJQzHfNMElZ7OhW_HbnaXw"
 });
 
 class App extends Component {

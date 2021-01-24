@@ -11,7 +11,7 @@ import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
 const Map = ReactMapboxGl({
 	accessToken:
-		"pk.eyJ1IjoiZXJpY2tvdGVueW8iLCJhIjoiY2owYXlsb2kxMDAwcjJxcDk3a2Q0MmdpZSJ9.GJQzHfNMElZ7OhW_HbnaXw"
+		"PUT_YOUR_ACCESS_TOKEN_HERE"
 });
 
 class Mapp extends PureComponent {
